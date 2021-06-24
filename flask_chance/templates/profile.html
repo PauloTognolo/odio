@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+	{% for order in orders %}
+		<div id="fh5co-contact" class="fh5co-section animate-box">
+			<div class="container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<h2>Previous Orders</h2>
+						<div class="media-body">
+							<div class="article-metadata">
+								<h1><a class="mr-2" > {{order.client.name}} </a></h1>
+							  <a class="text-muted">{{ order.date_posted.strftime('%Y-%m-%d') }}</a>
+							</div>
+							<div>
+									<h2><a class="article-content" >ID-Number: {{ order.type_cafe }} </a></h2>
+							</div>
+							<h2><a class="article-content">{{ order.price }} R$</a></h2>
+							<h2><a class="article-content">{{ order.quant_cafe }} Unidades</a></h2>
+						  </div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+
+{% endblock content %}
